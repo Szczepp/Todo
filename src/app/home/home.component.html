@@ -1,1 +1,24 @@
-<p>home works!</p>
+<!-- src/app/home/home.component.html -->
+
+<div class="container mt-4">
+    <h2>Task App</h2>
+  
+    <div class="form-group">
+      <input class="form-control" [(ngModel)]="newTask" placeholder="Add a new task" />
+      <button class="btn btn-primary mt-2" (click)="addTask()">Add</button>
+    </div>
+  
+    <div *ngFor="let task of getUncompletedTasks(); let i = index" class="mb-2">
+      <app-task [task]="task.text"></app-task>
+      <button class="btn btn-success" (click)="markAsCompleted(i)">Mark as Completed</button>
+    </div>
+  
+    <hr>
+  
+    <h3>Completed Tasks</h3>
+    
+    <div *ngFor="let completedTask of getCompletedTasks()" class="mb-2">
+      <app-task [task]="completedTask.text"></app-task>
+    </div>
+  </div>
+  
