@@ -35,4 +35,10 @@ export class HomeComponent implements OnInit {
   getUncompletedTasks(): { text: string; completed: boolean }[] {
     return this.tasks.filter(task => !task.completed);
   }
+  editTask(index: number): void {
+    const editedTask = prompt('Edit task:', this.tasks[index].text);
+    if (editedTask !== null) {
+      this.tasks[index].text = editedTask.trim();
+    }
+  }
 }

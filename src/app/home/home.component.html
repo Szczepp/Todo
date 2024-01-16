@@ -9,8 +9,15 @@
     </div>
   
     <div *ngFor="let task of getUncompletedTasks(); let i = index" class="mb-2">
-      <app-task [task]="task.text"></app-task>
-      <button class="btn btn-success" (click)="markAsCompleted(i)">Mark as Completed</button>
+      <div class="row">
+        <div class="col">
+          <app-task [task]="task.text"></app-task>
+        </div>
+        <div class="col text-right">
+          <button class="btn btn-success" (click)="markAsCompleted(i)">Mark as Completed</button>
+          <button class="btn btn-info" (click)="editTask(i)">Edit</button>
+        </div>
+      </div>
     </div>
   
     <hr>
@@ -18,7 +25,11 @@
     <h3>Completed Tasks</h3>
     
     <div *ngFor="let completedTask of getCompletedTasks()" class="mb-2">
-      <app-task [task]="completedTask.text"></app-task>
+      <div class="row">
+        <div class="col completed">
+          <app-task [task]="completedTask.text"></app-task>
+        </div>
+      </div>
     </div>
   </div>
   

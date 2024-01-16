@@ -1,0 +1,8 @@
+/* src/app/task/task.component.css */
+
+.card {
+    border: 1px solid #ccc; /* Add border */
+    padding: 10px; /* Add some padding */
+    font-size: 18px; /* Increase text size */
+  }
+  
